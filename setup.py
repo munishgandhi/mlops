@@ -10,6 +10,7 @@ setup(
     author='Rama Challa',
     author_email='rama@hy.ly',
     packages = find_packages(),
+    dependency_links=['git+ssh://git@github.com/munishgandhi/mlops.git#egg=mlops'],
     install_requires=requirements + [str(r) for r in pkg_resources.parse_requirements(open(os.path.join(os.path.dirname(__file__), "requirements.txt")))],
 
 )
