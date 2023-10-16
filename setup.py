@@ -9,7 +9,7 @@ setup(
     url='https://github.com/munishgandhi/mlops',
     author='Rama Challa',
     author_email='rama@hy.ly',
-    packages = ['chain_logger', 'dialog_logger', 'feedback_logger', 'usage_logger'],
+    packages = find_packages(),
     install_requires=requirements + [str(r) for r in pkg_resources.parse_requirements(open(os.path.join(os.path.dirname(__file__), "requirements.txt")))],
 
 )
