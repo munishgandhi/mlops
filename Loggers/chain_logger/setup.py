@@ -1,4 +1,8 @@
-from setuptools import setup
+import pkg_resources
+from setuptools import find_packages, setup
+import os
+
+requirements = []
 
 setup(
     name='hyly_chain_logger',
@@ -7,6 +11,12 @@ setup(
     author='Rama Challa',
     author_email='rama@hy.ly',
     py_modules=['log_chain'],
-    install_requires=['celery','redis','python-dotenv'],
+    install_requires=requirements
+                     + [
+                         str(r)
+                         for r in pkg_resources.parse_requirements(
+            open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
+        )
+                     ],
 
 )
